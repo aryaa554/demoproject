@@ -1,0 +1,80 @@
+{% extends 'back/admin.html' %}
+{%load static%}
+
+
+{%block mainblock%}
+
+
+
+
+<div id="page-content">
+    <!-- Datatables Header -->
+    <div class="content-header">
+        <div class="header-section">
+            <h1>
+                <i class="fa fa-table"></i>Contact List Millianer track<br><small>THis is News Contact List</small>
+            </h1>
+        </div>
+    </div>
+    
+    <ul class="breadcrumb breadcrumb-top">
+        <li>Tables</li>
+        <li><a href="">list</a></li>
+    </ul>
+    <!-- END Datatables Header -->
+
+    <!-- Datatables Content -->
+    <div class="block full">
+        <div class="block-title">
+            <h2><strong>Contact</strong>List</h2>
+        </div>
+       
+
+        <div class="table-responsive">
+            <table id="example-datatable" class="table table-vcenter table-condensed table-bordered">
+                <thead>
+                    <tr>
+                        <th class="text-center">Name</th>
+                        <th class="text-center">email</th>
+                        <th class="text-center">Phone</th>
+                        
+                        
+                        
+                        {% comment %} <th class="text-center">Actions</th> {% endcomment %}
+                    </tr>
+                </thead>
+                <tbody>
+                    {%for mt in mtdata%}
+                    <tr>
+                      
+                        <td>{{mt.name}}</td>
+                        <td>{{mt.email}}</td>
+
+                        <td>{{mt.phone}}</td>
+                        
+                       
+                        
+                        {% comment %} <td class="text-center">
+                            <div class="btn-group">
+                                <a href="" data-toggle="tooltip" title="Edit" class="btn btn-xs btn-default">Reply<i class=""></i></a>
+                                <a href="" data-toggle="tooltip" title="Delete" class="btn btn-xs btn-danger">Delete<i class="fa fa-times"></i></a>
+                            </div>
+                        </td> {% endcomment %}
+                        
+                        
+                    </tr>
+                    {%endfor%}
+                    
+                    
+ 
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- END Datatables Content -->
+</div>
+
+
+
+
+{%endblock%}
